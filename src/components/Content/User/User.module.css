@@ -2,9 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
+    /* align-items: center; */
 }
 
 button {
@@ -26,4 +24,11 @@ button:hover {
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+.Loading{
+    margin: auto;
+    padding: 30px;
+    font-size: 35px;
+    font-weight: 700;
 }

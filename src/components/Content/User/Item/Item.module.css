@@ -4,6 +4,12 @@
     margin: 20px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    transition: opacity 1s ease-in-out;
+    transform: translateY(1px);
+}
+
+.Item.show {
+    transform: translateY(0);
 }
 
 .Item img {
@@ -22,3 +28,4 @@
     font-size: 0.9em;
     color: #666;
 }
+

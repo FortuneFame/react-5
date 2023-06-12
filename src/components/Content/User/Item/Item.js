@@ -10,12 +10,12 @@ const Item = ({ name, phoneNumber, city, country, avatar, alt }) => {
   };
 
   return (
-     <section className={cn(styles.Item)}>
+     <div className={cn(styles.Item)}>
       <img src={avatar} alt={alt} onError={handleError} width="200" />
       <h2>{name}</h2>
       <p>{phoneNumber}</p>
       <p>{city}, {country}</p>
-    </section>
+    </div>
   )
 };
 

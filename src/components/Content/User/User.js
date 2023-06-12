@@ -1,36 +1,49 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Item from './Item';
-import { Users } from '../../../Data';
 import styles from './User.module.css';
 import cn from 'classnames';
+import { Users } from '../../../Data';
+import Item from './Item';
 
 const User = () => {
   const [isListVisible, setListVisible] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const toggleListVisibility = () => {
-    setListVisible(!isListVisible);
+    if (!isListVisible) {
+      setIsLoading(true);
+      setTimeout(() => {
+        setIsLoading(false);
+        setListVisible(true);
+      }, 1000);
+    } else {
+      setListVisible(false);
+    }
   };
 
   return (
-    <div className={cn(styles.Center)}>
+    <section className={cn(styles.Center)}>
       <button onClick={toggleListVisibility}>
         {isListVisible ? 'Выкл' : 'Вкл'}
       </button>
-      <div className={cn(styles.User)}>
-        {isListVisible && Users.map((user, index) => (
-          <Item
-            key={index}
-            name={user.name}
-            phoneNumber={user.phoneNumber}
-            city={user.city}
-            country={user.country}
-            avatar={user.avatar}
-            alt={user.alt}
-          />
-        ))}
-      </div>
-    </div>
+      {isLoading ? (
+        <div className={cn(styles.Loading)}>Loading...</div>
+      ) : (
+        isListVisible && <div className={cn(styles.User)}>
+          {Users.map((user, index) => (
+            <Item
+              key={index}
+              name={user.name}
+              phoneNumber={user.phoneNumber}
+              city={user.city}
+              country={user.country}
+              avatar={user.avatar}
+              alt={user.alt}
+            />
+          ))}
+        </div>
+      )}
+    </section>
   );
 };
 
