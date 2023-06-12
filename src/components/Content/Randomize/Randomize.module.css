@@ -1,0 +1,36 @@
+.Randomize {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.Randomize div {
+    text-align: center;
+    border: 1px solid #fd954f;
+    padding: 20px 50px;
+    border-radius: 4px;
+}
+
+.Randomize p {
+    background-color: #ff6b08;
+    color: #fff;
+    font-size: 54px;
+    padding: 20px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.Randomize button {
+    background-color: #fd954f;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.Randomize button:hover {
+    background-color: #ff6b08;
+}
